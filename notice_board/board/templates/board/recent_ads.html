@@ -1,0 +1,12 @@
+{% extends "board/base.html" %}
+
+{% block content %}
+  <h1>Останні оголошення</h1>
+  <ul>
+    {% for ad in ads %}
+      <li>{{ ad.title }} - {{ ad.created_at }}</li>
+    {% empty %}
+      <p>Немає оголошень за останні 30 днів.</p>
+    {% endfor %}
+  </ul>
+{% endblock %}

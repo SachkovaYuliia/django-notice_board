@@ -1,0 +1,23 @@
+{% extends "board/base.html" %}
+
+{% block title %}Активні оголошення{% endblock %}
+
+{% block content %}
+    <h1 class="my-4">Активні оголошення</h1>
+    <div class="row">
+        {% for ad in ads %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ ad.title }}</h5>
+                        <p class="card-text">{{ ad.short_description }}</p>
+                        <p class="card-text"><strong>Ціна:</strong> {{ ad.price }} грн</p>
+                        <a href="#" class="btn btn-primary">Детальніше</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>Наразі немає активних оголошень.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
